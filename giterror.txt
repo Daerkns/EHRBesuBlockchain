@@ -1,25 +1,11 @@
-vanir@Vanir:~/ehr-blockchain$ ^C
-vanir@Vanir:~/ehr-blockchain$ git add .
-vanir@Vanir:~/ehr-blockchain$ git commit -m 
-error: switch `m' requires a value
-vanir@Vanir:~/ehr-blockchain$ git commit -m "stuff"
-[main 2cbedb80] stuff
- 4 files changed, 25 insertions(+)
- delete mode 100644 besu-22.7.0.zip
- create mode 100644 giterror.txt
-vanir@Vanir:~/ehr-blockchain$ git push -u origin main
-Enumerating objects: 19048, done.
-Counting objects: 100% (19048/19048), done.
-Delta compression using up to 12 threads
-Compressing objects: 100% (13693/13693), done.
-Writing objects: 100% (19047/19047), 206.86 MiB | 15.63 MiB/s, done.
-Total 19047 (delta 4580), reused 18994 (delta 4549), pack-reused 0
-remote: Resolving deltas: 100% (4580/4580), done.
-remote: error: Trace: 926d626ca810f0cf90b85dca1851c643e5082be9a0f6e6f8964a0d8a25852f91
-remote: error: See https://gh.io/lfs for more information.
-remote: error: File besu-22.7.0.zip is 145.69 MB; this exceeds GitHub's file size limit of 100.00 MB
-remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
-To https://github.com/Daerkns/EHRBesuBlockchain.git
- ! [remote rejected]   main -> main (pre-receive hook declined)
-error: failed to push some refs to 'https://github.com/Daerkns/EHRBesuBlockchain.git'
+vanir@Vanir:~/ehr-blockchain$ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch besu-22.7.0.zip' --prune-empty --tag-name-filter cat -- --all
+WARNING: git-filter-branch has a glut of gotchas generating mangled history
+         rewrites.  Hit Ctrl-C before proceeding to abort, then use an
+         alternative filtering tool such as 'git filter-repo'
+         (https://github.com/newren/git-filter-repo/) instead.  See the
+         filter-branch manual page for more details; to squelch this warning,
+         set FILTER_BRANCH_SQUELCH_WARNING=1.
+Proceeding with filter-branch...
+
+Cannot rewrite branches: You have unstaged changes.
 vanir@Vanir:~/ehr-blockchain$ 
