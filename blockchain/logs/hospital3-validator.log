@@ -1,0 +1,6 @@
+[2m2025-03-19 20:38:22.309+02:00[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mStarting Besu
+[m[2m2025-03-19 20:38:22.425+02:00[m[2m | [m[2mmain[m[2m | [m[33mWARN [m[2m | [m[2mBesu[m[2m | [m[33m--min-gas-price has been ignored because --miner-enabled was not defined on the command line.
+[mInvalid enode URL syntax 'enode://0x3cc8b092a48ef3c2aa72418f9152958a4f48f35e040154966ea579875d2193267df3ca25b9833e3ac43e537c4b0645f673608f2877ad392776d1c80b3a084916@127.0.0.1:30303'. Enode URL should have the following format 'enode://<node_id>@<ip>:<listening_port>[?discport=<discovery_port>]'. Invalid node ID: node ID must have exactly 128 hexadecimal characters and should not include any '0x' hex prefix.
+
+To display full help:
+besu [COMMAND] --help

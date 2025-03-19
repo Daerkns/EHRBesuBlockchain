@@ -1,0 +1,91 @@
+Compiled successfully!
+
+You can now view patient-portal in the browser.
+
+  http://localhost:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+
+
+
+
+Failed to compile.
+
+SyntaxError: /home/vanir/ehr-blockchain/frontend/doctor-dashboard/src/App.js: Unexpected token (65:63)
+  63 |         ) : (
+  64 |           <>
+> 65 |             <Box sx={{ borderBottom: 1, borderColor: 'divider',# Create components directory
+     |                                                                ^
+  66 | mkdir -p /home/vanir/ehr-blockchain/frontend/doctor-dashboard/src/components
+  67 |
+  68 | # Create DoctorRegistration component
+ERROR in ./src/App.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/vanir/ehr-blockchain/frontend/doctor-dashboard/src/App.js: Unexpected token (65:63)
+
+  63 |         ) : (
+  64 |           <>
+> 65 |             <Box sx={{ borderBottom: 1, borderColor: 'divider',# Create components directory
+     |                                                                ^
+  66 | mkdir -p /home/vanir/ehr-blockchain/frontend/doctor-dashboard/src/components
+  67 |
+  68 | # Create DoctorRegistration component
+    at constructor (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:360:19)
+    at FlowParserMixin.raise (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:3327:19)
+    at FlowParserMixin.unexpected (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:3347:16)
+    at FlowParserMixin.parsePropertyName (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:11708:18)
+    at FlowParserMixin.parsePropertyDefinition (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:11576:10)
+    at FlowParserMixin.parseObjectLike (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:11517:21)
+    at FlowParserMixin.parseExprAtom (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:11025:23)
+    at FlowParserMixin.parseExprAtom (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:6936:20)
+    at FlowParserMixin.parseExprSubscripts (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10759:23)
+    at FlowParserMixin.parseUpdate (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10744:21)
+    at FlowParserMixin.parseMaybeUnary (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10724:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10577:61)
+    at FlowParserMixin.parseExprOps (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10582:23)
+    at FlowParserMixin.parseMaybeConditional (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10559:23)
+    at FlowParserMixin.parseMaybeAssign (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10522:21)
+    at FlowParserMixin.parseMaybeAssign (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:5772:18)
+    at FlowParserMixin.parseExpressionBase (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10477:23)
+    at /home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10473:39
+    at FlowParserMixin.allowInAnd (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:12101:12)
+    at FlowParserMixin.parseExpression (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10473:17)
+    at FlowParserMixin.jsxParseExpressionContainer (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:6804:31)
+    at FlowParserMixin.jsxParseAttributeValue (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:6776:21)
+    at FlowParserMixin.jsxParseAttribute (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:6825:38)
+    at FlowParserMixin.jsxParseOpeningElementAfterName (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:6839:28)
+    at FlowParserMixin.jsxParseOpeningElementAfterName (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:6291:18)
+    at FlowParserMixin.jsxParseOpeningElementAt (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:6834:17)
+    at FlowParserMixin.jsxParseElementAt (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:6858:33)
+    at FlowParserMixin.jsxParseElementAt (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:6870:32)
+    at FlowParserMixin.jsxParseElement (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:6921:17)
+    at FlowParserMixin.parseExprAtom (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:6931:19)
+    at FlowParserMixin.parseExprSubscripts (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10759:23)
+    at FlowParserMixin.parseUpdate (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10744:21)
+    at FlowParserMixin.parseMaybeUnary (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10724:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10577:61)
+    at FlowParserMixin.parseExprOps (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10582:23)
+    at FlowParserMixin.parseMaybeConditional (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10559:23)
+    at FlowParserMixin.parseMaybeAssign (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10522:21)
+    at /home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:5721:39
+    at FlowParserMixin.tryParse (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:3665:20)
+    at FlowParserMixin.parseMaybeAssign (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:5721:18)
+    at /home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10493:39
+    at FlowParserMixin.allowInAnd (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:12101:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10493:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:11360:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:5814:18)
+    at FlowParserMixin.parseExprAtom (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:11007:23)
+    at FlowParserMixin.parseExprAtom (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:6936:20)
+    at FlowParserMixin.parseExprSubscripts (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10759:23)
+    at FlowParserMixin.parseUpdate (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10744:21)
+    at FlowParserMixin.parseMaybeUnary (/home/vanir/ehr-blockchain/frontend/doctor-dashboard/node_modules/@babel/parser/lib/index.js:10724:23)
+
+ERROR in [eslint] 
+src/App.js
+  Line 65:63:  Parsing error: Unexpected token (65:63)
+
+webpack compiled with 2 errors

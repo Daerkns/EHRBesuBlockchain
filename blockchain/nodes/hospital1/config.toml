@@ -1,0 +1,17 @@
+data-path="/home/vanir/ehr-blockchain/blockchain/data/hospital1"
+genesis-file="/home/vanir/ehr-blockchain/blockchain/genesis/qbft-genesis.json"
+node-private-key-file="/home/vanir/ehr-blockchain/blockchain/keys/hospital1/key"
+rpc-http-enabled=true
+rpc-http-api=["ETH","NET","QBFT","ADMIN","WEB3","MINER"]
+rpc-http-cors-origins=["*"]
+rpc-http-host="0.0.0.0"
+rpc-http-port=8545
+host-allowlist=["*"]
+min-gas-price=0
+p2p-port=30303
+p2p-host="0.0.0.0"
+miner-enabled=true
+miner-coinbase="0xfe3b557e8fb62b89f4916b721be55ceb828dbd73"
+# QBFT specific settings
+qbft-validator-address="0xfe3b557e8fb62b89f4916b721be55ceb828dbd73"
+qbft-block-period-seconds=1
