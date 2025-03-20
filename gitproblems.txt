@@ -1,0 +1,66 @@
+vanir@Vanir:~/ehr-blockchain$ git submodule status
+fatal: no submodule mapping found in .gitmodules for path 'frontend/doctor-dashboard'
+vanir@Vanir:~/ehr-blockchain$ cd frontend/patient-portal
+vanir@Vanir:~/ehr-blockchain/frontend/patient-portal$ git add .
+vanir@Vanir:~/ehr-blockchain/frontend/patient-portal$ git commit -m "update patient portal submodule"
+[master 167bbae] update patient portal submodule
+ 9 files changed, 1630 insertions(+), 221 deletions(-)
+ create mode 100644 src/components/AccessManagement.js
+ create mode 100644 src/components/ContractDebugger.js
+ create mode 100644 src/components/MetaMaskStatus.js
+ create mode 100644 src/config/contracts.js
+ create mode 100644 src/services/patientService.js
+vanir@Vanir:~/ehr-blockchain/frontend/patient-portal$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+vanir@Vanir:~/ehr-blockchain/frontend/patient-portal$ cd ../..
+vanir@Vanir:~/ehr-blockchain$ git add frontend/patient-portal
+vanir@Vanir:~/ehr-blockchain$ git commit -m "update patient portal submodule reference"
+[main cdae7801] update patient portal submodule reference
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+vanir@Vanir:~/ehr-blockchain$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 381 bytes | 381.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Daerkns/EHRBesuBlockchain.git
+   4e77a793..cdae7801  main -> main
+vanir@Vanir:~/ehr-blockchain$ git submodule deinit frontend/patient-portal
+vanir@Vanir:~/ehr-blockchain$ git rm --cached frontend/patient-portal
+rm 'frontend/patient-portal'
+vanir@Vanir:~/ehr-blockchain$ rm -rf .git/modules/frontend/patient-portal
+vanir@Vanir:~/ehr-blockchain$ git add frontend/patient-portal
+warning: adding embedded git repository: frontend/patient-portal
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint: 
+hint:   git submodule add <url> frontend/patient-portal
+hint: 
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint: 
+hint:   git rm --cached frontend/patient-portal
+hint: 
+hint: See "git help submodule" for more information.
+vanir@Vanir:~/ehr-blockchain$ git commit -m "convert patient portal from submodule to regular directory"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        gitproblems.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+vanir@Vanir:~/ehr-blockchain$ 
