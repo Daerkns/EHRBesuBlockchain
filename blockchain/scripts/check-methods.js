@@ -3,16 +3,28 @@ const AccessControl = require('../build/contracts/AccessControl.json');
 const PatientRecords = require('../build/contracts/PatientRecords.json');
 
 console.log("EHRRegistry methods:");
-EHRRegistry.abi.filter(item => item.type === 'function').forEach(item => {
-  console.log();
-});
+if (EHRRegistry && EHRRegistry.abi) {
+  EHRRegistry.abi.filter(item => item.type === 'function').forEach(item => {
+    console.log(` - ${item.name}`);
+  });
+} else {
+  console.log("  Contract ABI not found or invalid");
+}
 
 console.log("\nAccessControl methods:");
-AccessControl.abi.filter(item => item.type === 'function').forEach(item => {
-  console.log();
-});
+if (AccessControl && AccessControl.abi) {
+  AccessControl.abi.filter(item => item.type === 'function').forEach(item => {
+    console.log(` - ${item.name}`);
+  });
+} else {
+  console.log("  Contract ABI not found or invalid");
+}
 
 console.log("\nPatientRecords methods:");
-PatientRecords.abi.filter(item => item.type === 'function').forEach(item => {
-  console.log();
-});
+if (PatientRecords && PatientRecords.abi) {
+  PatientRecords.abi.filter(item => item.type === 'function').forEach(item => {
+    console.log(` - ${item.name}`);
+  });
+} else {
+  console.log("  Contract ABI not found or invalid");
+}
