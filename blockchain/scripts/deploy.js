@@ -24,10 +24,11 @@ const deploy = async () => {
     
     console.log('EHRRegistry deployed at:', ehrRegistry.options.address);
     
-    // Deploy AccessControl
+    // Deploy AccessControl with EHRRegistry address
     const AccessControl = new web3.eth.Contract(AccessControlJSON.abi);
     const accessControl = await AccessControl.deploy({
-        data: AccessControlJSON.bytecode
+        data: AccessControlJSON.bytecode,
+        arguments: [ehrRegistry.options.address]
     }).send({
         from: deployer,
         gas: 3000000
@@ -35,10 +36,11 @@ const deploy = async () => {
     
     console.log('AccessControl deployed at:', accessControl.options.address);
     
-    // Deploy PatientRecords
+    // Deploy PatientRecords with AccessControl address
     const PatientRecords = new web3.eth.Contract(PatientRecordsJSON.abi);
     const patientRecords = await PatientRecords.deploy({
-        data: PatientRecordsJSON.bytecode
+        data: PatientRecordsJSON.bytecode,
+        arguments: [accessControl.options.address]
     }).send({
         from: deployer,
         gas: 3000000

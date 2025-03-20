@@ -14,13 +14,21 @@ const web3 = new Web3(process.env.BESU_NODE_URL || 'http://localhost:8545');
 // Load contract ABIs and addresses
 const loadContracts = async () => {
   try {
-    // In a production environment, these would be loaded from files
-    // For development, we'll load them dynamically
     const fs = require('fs');
     const path = require('path');
 
     // Path to contract build directory
     const buildPath = path.join(__dirname, '../../../blockchain/build/contracts');
+    const addressesPath = path.join(__dirname, '../../../blockchain/build/contract-addresses.json');
+    
+    // Load contract addresses
+    let addresses = {};
+    if (fs.existsSync(addressesPath)) {
+      addresses = JSON.parse(fs.readFileSync(addressesPath, 'utf8'));
+      console.log('Loaded contract addresses:', addresses);
+    } else {
+      console.warn('Contract addresses file not found:', addressesPath);
+    }
 
     // Load each contract
     for (const contractName of Object.keys(contracts)) {
@@ -30,9 +38,8 @@ const loadContracts = async () => {
         const contractData = JSON.parse(fs.readFileSync(contractPath, 'utf8'));
         contracts[contractName].abi = contractData.abi;
         
-        // Get network ID
-        const networkId = await web3.eth.net.getId();
-        contracts[contractName].address = contractData.networks[networkId]?.address;
+        // Use address from contract-addresses.json
+        contracts[contractName].address = addresses[contractName];
         
         if (contracts[contractName].address) {
           contracts[contractName].instance = new web3.eth.Contract(
@@ -41,7 +48,7 @@ const loadContracts = async () => {
           );
           console.log(`${contractName} loaded at ${contracts[contractName].address}`);
         } else {
-          console.warn(`Address not found for ${contractName} on network ${networkId}`);
+          console.warn(`Address not found for ${contractName}`);
         }
       } else {
         console.warn(`Contract build file not found: ${contractPath}`);

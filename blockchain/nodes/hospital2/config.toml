@@ -1,5 +1,5 @@
 data-path="/home/vanir/ehr-blockchain/blockchain/data/hospital2"
-genesis-file="/home/vanir/ehr-blockchain/blockchain/genesis/qbft-genesis.json"
+genesis-file="/home/vanir/ehr-blockchain/blockchain/genesis/qbft-genesis-4nodes.json"
 node-private-key-file="/home/vanir/ehr-blockchain/blockchain/keys/hospital2/key"
 rpc-http-enabled=true
 rpc-http-api=["ETH","NET","QBFT","ADMIN","WEB3"]
@@ -7,6 +7,8 @@ rpc-http-cors-origins=["*"]
 rpc-http-host="0.0.0.0"
 rpc-http-port=8546
 host-allowlist=["*"]
+permissions-nodes-config-file-enabled=true
+permissions-nodes-config-file="/home/vanir/ehr-blockchain/blockchain/permissions/nodes.toml"
 min-gas-price=0
 p2p-port=30304
 p2p-host="0.0.0.0"
