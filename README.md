@@ -1,6 +1,6 @@
 # EHR Blockchain System
 
-A private permissionless Electronic Health Record (EHR) blockchain system using Hyperledger Besu with QBFT consensus.
+A private permissioned Electronic Health Record (EHR) blockchain system using Hyperledger Besu with QBFT consensus.
 
 ## System Architecture
 
@@ -20,25 +20,39 @@ A private permissionless Electronic Health Record (EHR) blockchain system using 
    - AccessControl: Handles access permissions to medical records
    - PatientRecords: Stores and retrieves medical record metadata
 
-3. **API Gateway**
+3. **Authentication Service**
+   - MongoDB-based user management
+   - JWT authentication
+   - Role-based access control (patient, doctor, admin)
+   - Blockchain address verification
+
+4. **API Gateway**
    - Node.js/Express backend
    - RESTful API endpoints
    - Integration with blockchain and IPFS
+   - Proxy to authentication service
 
-4. **Storage System**
+5. **Storage System**
    - On-chain: EHR metadata, access control rules
    - Off-chain: Encrypted medical files on IPFS
 
-5. **Security Implementation**
+6. **Frontend Applications**
+   - Patient Portal: React-based interface for patients
+   - Doctor Dashboard: React-based interface for healthcare providers
+   - System monitoring and administration
+
+7. **Security Implementation**
    - Network permissioning
    - AES-256-GCM encryption for medical files
    - Role-based access control
+   - JWT-based authentication
 
 ## Getting Started
 
 ### Prerequisites
 - Node.js and npm
 - Hyperledger Besu
+- MongoDB (for authentication service)
 - IPFS (will be installed automatically if not present)
 
 ### Installation
@@ -65,8 +79,15 @@ The system can be started with a single command:
 This script will:
 1. Set up and start the 4-node Hyperledger Besu network
 2. Deploy the smart contracts
-3. Start the API Gateway
-4. Configure and start IPFS if needed
+3. Start the Authentication Service
+4. Start the API Gateway
+5. Configure and start IPFS if needed
+
+You can also run end-to-end tests to verify the system is working correctly:
+
+```
+./test-ehr-system.sh
+```
 
 ### Component-Specific Scripts
 
@@ -81,9 +102,21 @@ If you need to run components individually:
 #### API Gateway
 - Start API: `./api-gateway/start-api.sh`
 
+#### Authentication Service
+- Start Auth Service: `./auth-service/start-auth.sh`
+
+#### Frontend Applications
+- Patient Portal: `cd frontend/patient-portal && npm start`
+- Doctor Dashboard: `cd frontend/doctor-dashboard && npm start`
+
 ## System Usage
 
 ### API Endpoints
+
+#### Authentication
+- `POST /api/auth/register`: Register a new user (patient or doctor)
+- `POST /api/auth/login`: Login and get JWT token
+- `GET /api/auth/profile`: Get user profile information
 
 #### Patient Management
 - `POST /api/patients/register`: Register a new patient
@@ -102,13 +135,20 @@ If you need to run components individually:
 - `POST /api/patients/:id/records`: Add a new medical record
 - `GET /api/patients/:id/records/:recordId`: Get a specific medical record
 
+#### System Monitoring
+- `GET /api/monitor/services`: Get status of all services
+- `GET /api/monitor/nodes`: Get status of blockchain nodes
+
 ## Network Information
 
 - Hospital 1 RPC: http://localhost:8545
 - Hospital 2 RPC: http://localhost:8546
 - Hospital 3 RPC: http://localhost:8547
 - Hospital 4 RPC: http://localhost:8548
+- Auth Service: http://localhost:4000
 - API Gateway: http://localhost:3000
+- Patient Portal: http://localhost:3001 (when started)
+- Doctor Dashboard: http://localhost:3002 (when started)
 
 ## Security Features
 
@@ -123,6 +163,12 @@ If you need to run components individually:
 3. **Access Control**
    - Patients control access to their medical records
    - Doctors can only access records they've been granted permission to
+
+4. **Authentication**
+   - JWT-based authentication
+   - Password hashing with bcrypt
+   - Role-based access control
+   - Optional blockchain address verification
 
 ## Troubleshooting
 
@@ -139,6 +185,15 @@ If you need to run components individually:
 3. **IPFS connection issues**
    - Check if IPFS daemon is running with `ipfs swarm peers`
    - Restart IPFS with `ipfs daemon`
+
+4. **Authentication service issues**
+   - Ensure MongoDB is running
+   - Check logs for connection errors
+   - Verify JWT_SECRET is properly set in .env files
+
+5. **Frontend connection issues**
+   - Check that API Gateway is running
+   - Verify API URLs in frontend configuration
 
 ## License
 

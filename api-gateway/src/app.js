@@ -41,11 +41,13 @@ const initServices = async () => {
 const patientRoutes = require('./routes/patients');
 const doctorRoutes = require('./routes/doctors');
 const authRoutes = require('./routes/auth');
+const monitorRoutes = require('./routes/monitor');
 
 // Use routes
 app.use('/api/auth', authRoutes);
 app.use('/api/patients', patientRoutes);
 app.use('/api/doctors', doctorRoutes);
+app.use('/api/monitor', monitorRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
